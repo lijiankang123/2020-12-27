@@ -1,0 +1,22 @@
+view{
+  color:var(--themeColor);
+}
+swiper{
+  width: 750rpx;
+  height: 340rpx;
+}
+swiper image{
+  width: 750rpx;
+  height: 340rpx;
+}
+
+.index_cate{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.index_cate image{
+  width: 80rpx;
+  height: 80rpx;
+}
+
