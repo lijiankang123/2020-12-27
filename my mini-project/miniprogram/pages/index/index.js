@@ -9,16 +9,14 @@ Page({
 
   onLoad: function(options) {
     let db = wx.cloud.database();
-    let coll = db.collection('navigation');
-    coll.field({
-      image:true,
-      name:true,
-      _id:false
-    }).get({
+    let coll = db.collection('index_floor');
+    // console.log(coll);
+    coll.get({
       success:res=>{
         this.setData({
-          navigation:res.data
+          floor:res.data[0].message
         })
+        // console.log(res.data[0].message);
       }
     })
   },

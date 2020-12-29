@@ -30,4 +30,23 @@
     </navigator>
   </view> 
   <!-- 顶部导航栏结束 -->
+
+  <!-- 二楼 -->
+  <view class="index_floor">
+    <view class="floor">
+      <view class="floor_title">
+        {{floor[0].floor_name}}
+      </view>
+      <view wx:for="{{floor[1]}}" wx:key="index" class="floor_list">
+        <navigator>
+          <image src="/images/index/nvzhuang/{{item.image_src}}"></image>
+        </navigator>
+         <!-- <image src="/images/index/nvzhuang/baokuanqingcang.jpg"></image>
+         <image src="/images/index/nvzhuang/chunjiremen.jpg"></image>
+         <image src="/images/index/nvzhuang/daochunhan.jpg"></image>
+         <image src="/images/index/nvzhuang/pengranxindong.jpg"></image>
+         <image src="/images/index/nvzhuang/youzhifuwu.jpg"></image> -->
+      </view>
+   </view>
+   </view>
 </view>

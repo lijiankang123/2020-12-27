@@ -20,3 +20,11 @@ swiper image{
   height: 80rpx;
 }
 
+.floor_title{
+  color: red;
+  font-size: 25px;
+}
+.floor_list navigator{
+  float: left;
+  width: 33%;
+} 
