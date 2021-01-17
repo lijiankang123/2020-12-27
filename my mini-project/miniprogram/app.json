@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/auth/auth",
     "pages/category/category",
     "pages/goods_list/goods_list",
-    "pages/goods_detils/goods_details",
+    "pages/goods_details/goods_details",
     "pages/cart/cart",
     "pages/collect/collect",
     "pages/order/order",
@@ -46,7 +47,7 @@
           "selectedIconPath": "icons/cart-o.png"
         },
         {
-          "pagePath": "pages/cart/cart",
+          "pagePath": "pages/user/user",
           "text":"我的",
           "iconPath": "icons/my.png",
           "selectedIconPath": "icons/my-o.png"

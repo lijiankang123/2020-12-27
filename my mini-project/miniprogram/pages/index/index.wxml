@@ -1,52 +1,51 @@
-<view>
+<view class="pyg_index">
   <!-- 搜索框 -->
   <SearchInput></SearchInput>
   <!-- 轮播图 -->
-  <view>
+  <view class="index_swiper">
     <swiper autoplay="true" 
     indicator-dots="true" 
     indicator-color="#ccc" indicator-active-color="white"
     circular="true"
     interval="3000" duration="500">
-      <swiper-item>
-          <image src="/images/swiper/18797341291182699097.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-          <image src="/images/swiper/12346721346524645545.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-          <image src="/images/swiper/2740972157329532465.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-          <image src="/images/swiper/27426706592202206493.jpg"></image>
+      <swiper-item 
+       wx:for="{{swiperList}}"
+       wx:key="goods_id">
+          <image  mode="widthFix" src="{{item.image_src}}"></image>
       </swiper-item>
     </swiper>
   </view>
+
   <!-- 顶部导航栏开始 -->
   <view class="index_cate">
-    <navigator wx:for="{{navigation}}" wx:key="index">
-      <image src="/images/navigator/{{item.image}}"></image>
-      <view>{{item.name}}</view>
+    <navigator wx:for="{{catesList}}" wx:key="index">
+      <image mode="widthFix" src="{{item.image_src}}"></image>
     </navigator>
   </view> 
   <!-- 顶部导航栏结束 -->
 
-  <!-- 二楼 -->
-  <view class="index_floor">
-    <view class="floor">
-      <view class="floor_title">
-        {{floor[0].floor_name}}
-      </view>
-      <view wx:for="{{floor[1]}}" wx:key="index" class="floor_list">
-        <navigator>
-          <image src="/images/index/nvzhuang/{{item.image_src}}"></image>
-        </navigator>
-         <!-- <image src="/images/index/nvzhuang/baokuanqingcang.jpg"></image>
-         <image src="/images/index/nvzhuang/chunjiremen.jpg"></image>
-         <image src="/images/index/nvzhuang/daochunhan.jpg"></image>
-         <image src="/images/index/nvzhuang/pengranxindong.jpg"></image>
-         <image src="/images/index/nvzhuang/youzhifuwu.jpg"></image> -->
-      </view>
+   <!-- 楼层开始 -->
+   <view class="index_floor">
+     <view class="floor_group"
+       wx:for="{{floorList}}"
+       wx:for-item="item1"
+       wx:for-index="index1"
+       wx:key="floor_list">
+       <!-- 标题 -->
+       <view class="floor_title">
+        <image mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
+       </view>
+       <!-- 图片 -->
+       <view class="floor_list">
+         <navigator
+           wx:for="{{item1.product_list}}"
+           wx:for-item="item2"
+           wx:for-index="index2"
+           wx:key="name">
+          <image mode="{{index2===0 ? 'widthFix' : 'scaleToFill'}}" src="{{item2.image_src}}"></image>
+         </navigator>
+       </view>
+     </view>
    </view>
-   </view>
+   <!-- 楼层结束 -->
 </view>

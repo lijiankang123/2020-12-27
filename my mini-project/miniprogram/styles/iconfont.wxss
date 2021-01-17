@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xing:before {
+.icon-shoucang:before {
   content: "\e698";
 }
 
@@ -31,7 +31,7 @@
   content: "\e6e4";
 }
 
-.icon-xing1:before {
+.icon-shoucang1:before {
   content: "\e630";
 }
 

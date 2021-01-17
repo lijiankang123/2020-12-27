@@ -1,4 +1,4 @@
-// pages/goods_detils/goods_details.js
+// pages/auth/auth.js
 Page({
 
   /**

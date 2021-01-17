@@ -1,0 +1,15 @@
+view{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+text{
+  color: var(--themeColor);
+  font-size: 32rpx;
+  border: 1rpx solid currentColor;
+  padding: 10rpx;
+  margin-top: 50%;
+}

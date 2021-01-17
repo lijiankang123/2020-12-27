@@ -1,0 +1,120 @@
+page{
+  background-color: #edece8;
+}
+.uer_info_wrap{
+  position: relative;
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  .user_image_wrap{
+    .user_bg{
+      height: 46vh;
+      filter: blur(10rpx);
+    }
+    .user_info{
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translateX(-50%);
+      text-align: center;
+      .user_icon{
+        width: 150rpx;
+        height: 150rpx;
+        border-radius: 50%;
+      }
+      .user_name{
+        color: #fff;
+        margin-top: 40rpx;
+      }
+    }
+  }
+  .user_btn{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1rpx solid greenyellow;
+    color: greenyellow;
+    font-size: 38rpx;
+    padding: 30rpx;
+    border-radius: 10rpx;
+  }
+}
+
+// 收藏关注
+.user_content{
+  position: relative;
+  .user_main{
+    padding-bottom: 100rpx;
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top:-40rpx;
+    color: #666;
+    // 历史足迹
+    .history_wrap{
+      display: flex;
+      background: #fff;
+      navigator{
+        flex: 1;
+        text-align: center;
+        padding: 10rpx 0;
+        .his_num{
+          color: var(--themeColor);
+        }
+        .his_name{}
+      }
+    }
+    // 我的订单
+    .order_wrap{
+      background-color: #fff;
+      margin-top: 20rpx;
+      .order_title{
+        padding: 20rpx;
+        border-bottom: 1rpx solid #ccc;
+      }
+      .order_content{
+        display: flex;
+        navigator{
+          flex: 1;
+          padding: 15rpx 0;
+          text-align: center;
+          .iconfont{
+            color: var(--themeColor);
+            font-size: 40rpx;
+          }
+          .order_name{
+          }
+        }
+      }
+    }
+
+    // 收藏地址管理
+    .address_wrap{
+      background-color: #fff;
+      margin-top: 30rpx;
+      padding: 20rpx;
+    }
+    // 应用相关信息
+    .app_info_wrap{
+      margin-top: 30rpx;
+      background-color: #fff;
+      .app_info_item{
+        padding: 20rpx;
+        border-bottom: 2rpx solid #ccc;
+      }
+      .app_info_contact{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    // 推荐
+    .recommend_wrap{
+      background: #fff;
+      margin-top: 30rpx;
+      padding: 20rpx;
+    }
+  }
+  
+}
