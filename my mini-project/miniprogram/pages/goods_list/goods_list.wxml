@@ -15,8 +15,7 @@
         </view>
       </navigator>
     </view>
-      
   </block>
-  <block wx:if="{{tabs[1].isActive}}">1</block>
-  <block wx:if="{{tabs[2].isActive}}">2</block>
+  <block wx:if="{{tabs[1].isActive}}"></block>
+  <block wx:if="{{tabs[2].isActive}}"></block>
 </Tabs>

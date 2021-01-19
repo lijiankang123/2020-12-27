@@ -131,6 +131,11 @@
           "pathName": "pages/search/search",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "意见反馈",
+          "pathName": "pages/feedback/feedback",
+          "scene": null
         }
       ]
     }

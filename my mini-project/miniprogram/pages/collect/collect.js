@@ -1,120 +1,48 @@
-// pages/collect/collect.js
-// Page({
-
-//   /**
-//    * 页面的初始数据
-//    */
-//   data: {
-//     collect:[],
-//     tabs:[
-//       {
-//         id:0,
-//         value:'商品收藏',
-//         isActive:true,
-//       },
-//       {
-//        id:1,
-//        value:'品牌收藏',
-//        isActive:false,
-//      },
-//      {
-//        id:2,
-//        value:'店铺收藏',
-//        isActive:false,
-//      },
-//      {
-//       id:3,
-//       value:'浏览足迹',
-//       isActive:false,
-//     }
-//     ]
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面加载
-//    */
-//   onShow() {
-//     const collect = wx.getStorageSync('collect') || [];
-//     this.setData({
-//       collect
-//     })
-//   },
-
-//   handleTabsItemChange(e){
-//     // console.log(e);
-//     const {index} = e.detail;
-//     let {tabs} = this.data;
-//     tabs.forEach((v,i) => i===index ? v.isActive=true : v.isActive=false);
-//     this.setData({
-//       tabs
-//     })
-//   },
-// })
-
-
-
-
-
-
-
-/* 
-1 输入框绑定 值改变事件 input事件
-  1 获取到输入框的值
-  2 合法性判断 
-  3 检验通过 把输入框的值 发送到后台
-  4 返回的数据打印到页面上
-2 防抖 （防止抖动） 定时器  节流 
-  0 防抖 一般 输入框中 防止重复输入 重复发送请求
-  1 节流 一般是用在页面下拉和上拉 
-  1 定义全局的定时器id
- */
 import { request } from "../../request/index.js";
 import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data: {
-    goods:[],
-    // 取消 按钮 是否显示
-    isFocus:false,
-    // 输入框的值
-    inpValue:""
-  },
-  TimeId:-1,
-  // 输入框的值改变 就会触发的事件
-  handleInput(e){
-    // 1 获取输入框的值
-    const {value}=e.detail;
-    // 2 检测合法性
-    if(!value.trim()){
-      this.setData({
-        goods:[],
-        isFocus:false
-      })
-      // 值不合法
-      return;
+    collect:[],
+    tabs:[
+      {
+        id:0,
+        value:'商品收藏',
+        isActive:true,
+      },
+      {
+        id:1,
+        value:'品牌收藏',
+        isActive:false,
+      },
+      {
+        id:2,
+        value:'店铺收藏',
+        isActive:false,
+      },
+      {
+      id:3,
+      value:'浏览足迹',
+      isActive:false,
     }
-    // 3 准备发送请求获取数据
-    this.setData({
-      isFocus:true
-    })
-    clearTimeout(this.TimeId);
-    this.TimeId=setTimeout(() => {
-      this.qsearch(value);
-    }, 1000);
+    ]
   },
-  // 发送请求获取搜索建议 数据
-  async qsearch(query){
-    const res=await request({url:"/goods/qsearch",data:{query}});
-    console.log(res);
+ 
+  onShow(){
+    const collect = wx.getStorageSync('collect') || [];
     this.setData({
-      goods:res
+      collect
     })
   },
-  // 点击 取消按钮
-  handleCancel(){
+
+  handleTabsItemChange(e) {
+    // 1 获取被点击的标题索引
+    const { index } = e.detail;
+    // 2 修改源数组
+    let { tabs } = this.data;
+    tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
+    // 3 赋值到data中
     this.setData({
-      inpValue:"",
-      isFocus:false,
-      goods:[]
+      tabs
     })
   }
 })

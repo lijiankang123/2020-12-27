@@ -4,7 +4,7 @@
     "pages/auth/auth",
     "pages/category/category",
     "pages/goods_list/goods_list",
-    "pages/goods_details/goods_details",
+    "pages/goods_detail/main",
     "pages/cart/cart",
     "pages/collect/collect",
     "pages/order/order",
@@ -17,7 +17,7 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#eb4450",
+    "navigationBarBackgroundColor": "#EB4450",
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "white"
   },
